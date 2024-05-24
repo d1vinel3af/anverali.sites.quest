@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<form method="POST">{% csrf_token %}
+        <p>Название заказа: {{ form.title }}</p>
+        <p>Кто требуется: {{ form.who_needs }}</p>
+        <p>Описание заказа: {{ form.description }}</p>
+        <p>Оплата: {{ form.price }}</p>
+        <button type="submit">Создать заказ</button>
+</form>
+{{ form.errors }}
+{% endblock %}
